@@ -3,7 +3,10 @@ import React from "react";
 export default function () {
   return (
     <div>
-      HEY!! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat corrupti aspernatur, aliquid mollitia dolores dolorem quae distinctio minima laudantium libero adipisci dolor blanditiis odit voluptates a dicta quod est laboriosam?
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima aperiam
+      iste tempora, amet recusandae facere consequuntur tenetur ut eius tempore,
+      dolorum, sequi deleniti eligendi facilis. Quasi tempora eos suscipit
+      repudiandae?
     </div>
   );
 }
