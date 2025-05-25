@@ -32,11 +32,9 @@ function App() {
          <Route path="/app8" element={<App8 />}></Route>
          <Route path="/app9" element={<App9 />}></Route>
          <Route path="/app10" element={<App10 />}></Route>
-
-        
-
-       
-
+         <Route path="/app11" element={<App11 />}></Route>
+         <Route path="/app12" element={<App12 />}></Route>
+         <Route path="/app13" element={<App13 />}></Route>
 
       </Routes>
       <Footer />
