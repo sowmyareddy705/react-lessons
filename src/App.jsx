@@ -29,6 +29,9 @@ function App() {
          <Route path="/app7" element={<App7 />}></Route>
          <Route path="/app8" element={<App8 />}></Route>
          <Route path="/app9" element={<App9 />}></Route>
+         <Route path="/app10" element={<App10 />}></Route>
+
+       
 
 
       </Routes>
