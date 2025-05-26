@@ -17,8 +17,10 @@ import App13 from "./components/App13";
 import App14 from "./components/App14";
 import App15 from "./components/App15";
 import App16 from "./components/App16";
+import App17 from "./components/App17";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+
 import "./App.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 function App() {
@@ -39,12 +41,11 @@ function App() {
          <Route path="/app10" element={<App10 />}></Route>
          <Route path="/app11" element={<App11 />}></Route>
          <Route path="/app12" element={<App12 />}></Route>
-         <Route path="/app13" element={<App13 />}></Route>
-         <Route path="/app14" element={<App14 />}></Route>
-         <Route path="/app15" element={<App15 />}></Route>
-         <Route path="/app16" element={<App16 />}></Route>
-
-
+          <Route path="/app13" element={<App13 />}></Route>
+          <Route path="/app14" element={<App14 />}></Route>
+          <Route path="/app15" element={<App15 />}></Route>
+           <Route path="/app16" element={<App16 />}></Route>
+            <Route path="/app17" element={<App17 />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>
