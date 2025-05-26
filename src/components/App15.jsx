@@ -7,7 +7,7 @@ export default function App15() {
   const colorRef = useRef();
 
   const [sum, setSum] = useState(null);
-  const [textColor, setTextColor] = useState("blue");
+  const [textColor, setTextColor] = useState("black");
 
   const handleNameSubmit = () => {
     alert(nameRef.current.value);
@@ -26,33 +26,68 @@ export default function App15() {
   };
 
   return (
-    <div>
+    <div style={{ fontFamily: "Arial", padding: "20px" }}>
       <h1>App15</h1>
       <h2>useRef hook - to create uncontrolled component</h2>
 
       {/* Name input */}
-      <p>
-        <input type="text" ref={nameRef} placeholder="Enter your name" />
-      </p>
-      <button onClick={handleNameSubmit}>Submit</button>
-
-      <hr />
-
-      {/* Two number inputs */}
-      <div>
-        <input type="text" ref={num1Ref} placeholder="Enter number 1" />
-        <input type="text" ref={num2Ref} placeholder="Enter number 2" />
-        <button onClick={handleSumSubmit}>Submit</button>
-        <div>{sum !== null && <p>{sum}</p>}</div>
+      <div style={{ marginBottom: "20px" }}>
+        <input
+          type="text"
+          ref={nameRef}
+          placeholder="Enter your name"
+          style={{ padding: "5px", marginRight: "10px" }}
+        />
+        <button onClick={handleNameSubmit}>Submit</button>
       </div>
 
       <hr />
 
-      {/* Color input to change Hello world color */}
-      <div>
-        <input type="text" ref={colorRef} placeholder="Enter a color" />
+      {/* Sum Section in a box */}
+      <div
+        style={{
+          border: "2px solid black",
+          padding: "15px",
+          marginBottom: "20px",
+          width: "fit-content",
+        }}
+      >
+        <input
+          type="text"
+          ref={num1Ref}
+          placeholder="Enter number 1"
+          style={{ padding: "5px", marginRight: "10px" }}
+        />
+        <input
+          type="text"
+          ref={num2Ref}
+          placeholder="Enter number 2"
+          style={{ padding: "5px", marginRight: "10px" }}
+        />
+        <button onClick={handleSumSubmit}>Submit</button>
+        {sum !== null && (
+          <div style={{ marginTop: "10px", fontWeight: "bold" }}>{sum}</div>
+        )}
+      </div>
+
+      {/* Color Section in a box */}
+      <div
+        style={{
+          border: "2px solid black",
+          padding: "15px",
+          width: "fit-content",
+        }}
+      >
+        <input
+          type="text"
+          ref={colorRef}
+          placeholder="Enter a color"
+          style={{ padding: "5px", marginRight: "10px" }}
+        />
         <button onClick={handleColorSubmit}>Submit</button>
-        <h2 style={{ color: textColor }}>Hello world</h2>
+        <div style={{ marginTop: "10px" }}>
+          <h2 style={{ color: textColor, margin: 0 }}>Hello world</h2>
+        </div>
       </div>
     </div>
   );
