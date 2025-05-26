@@ -15,7 +15,6 @@ export default function App14() {
     fetchData();
   }, []);
 
-  // Filter users based on search term
   const filteredUsers = users.filter((user) =>
     user.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -27,29 +26,21 @@ export default function App14() {
       <p>
         <input
           type="text"
-          placeholder="Search name"
+          placeholder="Enter to search"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </p>
-      {filteredUsers.length > 0 ? (
-        <ol>
-          {filteredUsers.map((user) => (
-            <li key={user.id}>
-              <strong>Name:</strong> {user.name} <br />
-              <strong>Username:</strong> {user.username} <br />
-              <strong>Email:</strong> {user.email} <br />
-              <strong>Phone:</strong> {user.phone} <br />
-              <strong>Website:</strong> {user.website} <br />
-              <strong>Company:</strong> {user.company.name} <br />
-              <strong>Address:</strong>{" "}
-              {`${user.address.suite}, ${user.address.street}, ${user.address.city} - ${user.address.zipcode}`}
-            </li>
-          ))}
-        </ol>
-      ) : (
-        <p>No matching user found.</p>
-      )}
+      <ol>
+        {filteredUsers.map((user) => (
+          <li key={user.id}>
+            <strong>ID:</strong> {user.id} <br />
+            <strong>Name:</strong> {user.name} <br />
+            <strong>Email:</strong> {user.email} <br />
+            <strong>Phone:</strong> {user.phone}
+          </li>
+        ))}
+      </ol>
     </div>
   );
 }
