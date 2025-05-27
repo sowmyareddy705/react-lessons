@@ -8,10 +8,10 @@ function App19() {
   useEffect(() => {
     if (wicket >= 10) {
       setMessage('Game Over!');
-    } else if (run > 0) {
-      setMessage('Well Done!');
     } else if (wicket > 0) {
       setMessage('Better Luck Next Time!');
+    } else if (run > 0) {
+      setMessage('Well Done!');
     } else {
       setMessage('');
     }
@@ -39,7 +39,7 @@ function App19() {
   const titleStyle = {
     fontSize: '32px',
     fontWeight: 'bold',
-    color: '#0047AB', // dark blue
+    color: '#0047AB',
     marginBottom: '30px',
   };
 
@@ -76,9 +76,9 @@ function App19() {
 
       <div style={boxContainerStyle}>
         <div style={boxStyle}>
-          <h2>{run}</h2>
+          <h4>Runs: {run}</h4>
           <button onClick={handleRun} style={buttonStyle}>Run</button>
-          <h2>{wicket}</h2>
+          <h4>Wickets: {wicket}</h4>
           <button onClick={handleWicket} style={buttonStyle}>Wicket</button>
         </div>
 
