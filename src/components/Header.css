@@ -1,20 +1,20 @@
 .App-Header-Row{
-    background-color: rgb(135, 205, 218);
+    background-color: rgb(146, 182, 189);
 }
 .app-link-box {
   display: inline-block;
   padding: 10px 15px;
   margin: 5px;
-  border: 2px solid #007bff;
+  border: 2px solid #2581ac;
   border-radius: 8px;
   background-color: #f0f8ff;
-  color: #007bff;
+  color: #076d86;
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
 
 .app-link-box:hover {
-  background-color: #007bff;
+  background-color: #6d859e;
   color: white;
 }
