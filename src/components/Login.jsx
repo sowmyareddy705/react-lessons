@@ -1,40 +1,39 @@
 import React, { useState } from "react";
-
-const Login = ({ users }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
-
-  const handleLogin = () => {
-    const foundUser = users.find(
-      user => user.email === email && user.password === password
+import { AppContext } from "./App21";
+import { useContext } from "react";
+export default function Login() {
+  const { users } = useContext(AppContext);
+  const [user, setUser] = useState({});
+  const [msg, setMsg] = useState();
+  const handleSubmit = () => {
+    const found = users.find(
+      (value) => value.email === user.email && value.pass === user.pass
     );
-
-   if (foundUser) {
-  setMessage('Welcome, ${foundUser.name}!');
-} else {
-  setMessage("Not valid, please try again.");
-}
+    if (found) {
+      setMsg("Welcome " + found.name);
+    } else {
+      setMsg("Invalid User or Password");
+    }
   };
-
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Email"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
-      /><br />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={e => setPassword(e.target.value)}
-      /><br />
-      <button onClick={handleLogin}>Submit</button>
-      <p>{message}</p>
+    <div style={{ margin: "30px" }}>
+      <h3>Login</h3>
+      {msg}
+      <p>
+        <input
+          type="text"
+          placeholder="Email address"
+          onChange={(e) => setUser({ ...user, email: e.target.value })}
+        />
+      </p>
+      <p>
+        <input
+          type="password"
+          placeholder="Password"
+          onChange={(e) => setUser({ ...user, pass: e.target.value })}
+        />
+      </p>
+      <button onClick={handleSubmit}>Submit</button>
     </div>
   );
-};
-
-export default Login;
+}

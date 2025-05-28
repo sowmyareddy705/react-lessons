@@ -1,26 +1,41 @@
-// Register.jsx
 import React, { useState } from "react";
-
-const Register = ({ users, setUsers, setShowLogin }) => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleRegister = () => {
-    const newUser = { name, email, password };
-    setUsers([...users, newUser]);
-    alert("Registered Successfully");
-    setShowLogin(true);
+import { AppContext } from "./App21";
+import { useContext } from "react";
+export default function Register() {
+  const { users, setUsers } = useContext(AppContext);
+  const [user, setUser] = useState({});
+  const handleSubmit = () => {
+    setUsers([...users, user]);
   };
-
   return (
-    <div>
-      <input placeholder="Name" value={name} onChange={e => setName(e.target.value)} /><br />
-      <input placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} /><br />
-      <input placeholder="Password" type="password" value={password} onChange={e => setPassword(e.target.value)} /><br />
-      <button onClick={handleRegister}>Submit</button>
+    <div style={{ margin: "30px" }}>
+      <h3>Register</h3>
+      <p>
+        <input
+          type="text"
+          placeholder="Name"
+          onChange={(e) => setUser({ ...user, name: e.target.value })}
+        />
+      </p>
+      <p>
+        <input
+          type="text"
+          placeholder="Email address"
+          onChange={(e) => setUser({ ...user, email: e.target.value })}
+        />
+      </p>
+      <p>
+        <input
+          type="password"
+          placeholder="New Password"
+          onChange={(e) => setUser({ ...user, pass: e.target.value })}
+        />
+      </p>
+      <button onClick={handleSubmit}>Submit</button>
+      <hr />
+      {users && users.map(value=>(
+        <li>{value.name}-{value.email}-{value.pass}</li>
+      ))}
     </div>
   );
-};
-
-export default Register;
+}
