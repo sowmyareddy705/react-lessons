@@ -14,7 +14,7 @@ export default function App22() {
   }, []);
 
   return (
-    <div style={{ backgroundColor: 'pink', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <div style={{ backgroundColor: 'grey', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <div style={{
         backgroundColor: '#add8e6', // light blue
         padding: '20px 40px',
