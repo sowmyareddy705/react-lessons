@@ -30,6 +30,8 @@ export default function Header() {
         <Link to="/app19" className="app-link-box">App19</Link>
         <Link to="/app20" className="app-link-box">App20</Link>
         <Link to="/app21" className="app-link-box">App21</Link>
+        <Link to="/app22" className="app-link-box">App22</Link>
+
       </div>
     </div>
   );
