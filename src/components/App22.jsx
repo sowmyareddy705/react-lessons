@@ -1,3 +1,10 @@
-import { jsx } from "react/jsx-runtime";
+import React from "react";
+const App22 = () => {
+  return (
+    <div>
+      {/* Your code here */}
+    </div>
+  );
+};
 
-jsx
+export default App22;
